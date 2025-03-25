@@ -10,3 +10,14 @@ def import_file(file_path):
         return "Файл не найден."
     except Exception as e:
         return f"Произошла ошибка: {e}"
+
+# Created In Dev Branch:
+
+def export_file(file_path, content):
+    """Экспортирует строку в текстовый файл."""
+    try:
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(content)
+        return "Файл успешно сохранён."
+    except Exception as e:
+        return f"Произошла ошибка: {e}"
