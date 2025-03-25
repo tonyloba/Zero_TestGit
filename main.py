@@ -22,7 +22,15 @@ def export_file(file_path, content):
     except Exception as e:
         return f"Произошла ошибка: {e}"
 
-# Created In Dev Branch
+# Created In Dev 2 Branch:
+
 def count_lines_in_file(file_path):
     """Подсчитывает количество строк в текстовом файле."""
-    pass
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+        return len(lines)
+    except FileNotFoundError:
+        return "Файл не найден."
+    except Exception as e:
+        return f"Произошла ошибка: {e}"
